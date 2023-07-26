@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d681112f-9c2b-493f-af51-6afc22f977c4/resourceGroups/nodesapiwassap/providers/Microsoft.Web/sites/nodesapiwassap",
+    "appService.deploySubpath": "src"
+}
