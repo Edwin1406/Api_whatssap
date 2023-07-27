@@ -1,0 +1,346 @@
+{
+	"info": {
+		"_postman_id": "8a46af0b-991f-44a8-a7ef-bafcc3440275",
+		"name": "Chat_whatssapp",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28656134"
+	},
+	"item": [
+		{
+			"name": "plantilla_hello_world",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBAElXOVNZCJQSjQx6xB4ZCM7HEu8x40PfA8IfKcjp4EHnVwKy04ypagPZC8DDw0cOFk3tS51kRsVn9FNjTRQWO4Yd98ZAIDP3KUDtfCtfLZCSlbrVZCMRFlFA2KHZCZAkCa9C0w2hQRymev3LRigrJ2ZB0hEwVkt4wH08lyrgssS5B",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"messaging_product\": \"whatsapp\", \"to\": \"593998743271\", \"type\": \"template\", \"template\": { \"name\": \"hello_world\", \"language\": { \"code\": \"en_US\" } } }"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mensaje personalizado",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBAElXOVNZCJQSjQx6xB4ZCM7HEu8x40PfA8IfKcjp4EHnVwKy04ypagPZC8DDw0cOFk3tS51kRsVn9FNjTRQWO4Yd98ZAIDP3KUDtfCtfLZCSlbrVZCMRFlFA2KHZCZAkCa9C0w2hQRymev3LRigrJ2ZB0hEwVkt4wH08lyrgssS5B",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",    \r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"text\",\r\n    \"text\": {\r\n        \"preview_url\": true,\r\n        \"body\": \"Este es mi primer mensaje personalizado\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "tipos de formatos de texto",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBOZC3oPOdpjn7To7bjyitq55ZBWkDrVAy4rBslZATxxjk7e16ysTdc4nkwBZB55LO1a9DZAfWcK6mRRXadbJqeDgIhMh5EH0wTaMAdiWZAXigSCmxYRSVs0aJNBBxWQ5ZA5bmHnm6WIMPZBkr1L8MDbRcvplzzYyou8HiXGVP8UxIM6BURJj6DPfUlZBUmknJYoXC60dNSZCb8ZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",    \r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"text\",\r\n    \"text\": {\r\n        \"preview_url\": false,\r\n        \"body\": \"*Este es mi primer mensaje personalizado*\\n*Este es mi segundo mensaje personalizado*\\n*Este es mi tercer mensaje personalizado*\"\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVIAR PDF",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBAElXOVNZCJQSjQx6xB4ZCM7HEu8x40PfA8IfKcjp4EHnVwKy04ypagPZC8DDw0cOFk3tS51kRsVn9FNjTRQWO4Yd98ZAIDP3KUDtfCtfLZCSlbrVZCMRFlFA2KHZCZAkCa9C0w2hQRymev3LRigrJ2ZB0hEwVkt4wH08lyrgssS5B",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"document\",\r\n    \"document\": {\r\n        \"link\": \"https://www3.gobiernodecanarias.org/medusa/ecoblog/asanramf/files/2014/11/T-3-LAS-PLANTAS-BLOG-1.pdf\",\r\n        \"caption\": \"DOCUEMNTO DE INFORMACION\"\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVIAR IMAGENES",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBOZC3oPOdpjn7To7bjyitq55ZBWkDrVAy4rBslZATxxjk7e16ysTdc4nkwBZB55LO1a9DZAfWcK6mRRXadbJqeDgIhMh5EH0wTaMAdiWZAXigSCmxYRSVs0aJNBBxWQ5ZA5bmHnm6WIMPZBkr1L8MDbRcvplzzYyou8HiXGVP8UxIM6BURJj6DPfUlZBUmknJYoXC60dNSZCb8ZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n\r\n{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"image\",\r\n    \"image\": {\r\n        \"link\": \"https://random.imagecdn.app/500/150\"\r\n    }\r\n}\r\n\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVIAR AUDIO",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBOZC3oPOdpjn7To7bjyitq55ZBWkDrVAy4rBslZATxxjk7e16ysTdc4nkwBZB55LO1a9DZAfWcK6mRRXadbJqeDgIhMh5EH0wTaMAdiWZAXigSCmxYRSVs0aJNBBxWQ5ZA5bmHnm6WIMPZBkr1L8MDbRcvplzzYyou8HiXGVP8UxIM6BURJj6DPfUlZBUmknJYoXC60dNSZCb8ZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"audio\",\r\n    \"audio\": {\r\n        \"link\": \"http://sonidosmp3gratis.com/sounds/bob-esponja-tonos.mp3\"\r\n    }\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "ENVIAR VIDEO",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBOZC3oPOdpjn7To7bjyitq55ZBWkDrVAy4rBslZATxxjk7e16ysTdc4nkwBZB55LO1a9DZAfWcK6mRRXadbJqeDgIhMh5EH0wTaMAdiWZAXigSCmxYRSVs0aJNBBxWQ5ZA5bmHnm6WIMPZBkr1L8MDbRcvplzzYyou8HiXGVP8UxIM6BURJj6DPfUlZBUmknJYoXC60dNSZCb8ZD",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"video\",\r\n    \"video\": {\r\n        \"link\": \"https://static.videezy.com/system/resources/previews/000/025/071/original/4k-police-line-no-trespassing-mask-background.mp4\"\r\n    }\r\n}\r\n\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAS",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "EAALpQRxyXkgBAElXOVNZCJQSjQx6xB4ZCM7HEu8x40PfA8IfKcjp4EHnVwKy04ypagPZC8DDw0cOFk3tS51kRsVn9FNjTRQWO4Yd98ZAIDP3KUDtfCtfLZCSlbrVZCMRFlFA2KHZCZAkCa9C0w2hQRymev3LRigrJ2ZB0hEwVkt4wH08lyrgssS5B",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"messaging_product\": \"whatsapp\",\r\n    \"recipient_type\": \"individual\",\r\n    \"to\": \"593998743271\",\r\n    \"type\": \"interactive\",\r\n    \"interactive\": {\r\n        \"type\": \"list\",\r\n        \"header\": {\r\n            \"type\": \"TEXT\",\r\n            \"text\": \"BIENVENIDOS\"\r\n        },\r\n        \"body\": {\r\n            \"text\": \"AGRADECIDOS\"\r\n        },\r\n        \"footer\": {\r\n            \"text\": \"CON USTEDES\"\r\n        },\r\n        \"action\": {\r\n            \"button\": \"DA CLICK AQUI\",\r\n            \"sections\": [\r\n                {\r\n                    \"title\": \"LISTA DE PRODUCUTOS\",\r\n                    \"rows\": [\r\n                        {\r\n                            \"id\": \"SELECCIONA\",\r\n                            \"title\": \"HABAS\",\r\n                            \"description\": \"BUENAS\"\r\n                        },\r\n                        {\r\n                            \"id\": \"SELECCIONA5\",\r\n                            \"title\": \"NUTELLA\",\r\n                            \"description\": \"BUENAS\"\r\n                        }\r\n                    ]\r\n                },\r\n                {\r\n                    \"title\": \"PRODUCTOS NATURALES\",\r\n                    \"rows\": [\r\n                        {\r\n                            \"id\": \"SELECCIONA1\",\r\n                            \"title\": \"TUBOS\",\r\n                            \"description\": \"BUENA\"\r\n                        },\r\n                        {\r\n                            \"id\": \"SELECCIONA2\",\r\n                            \"title\": \"TECLADOS\",\r\n                            \"description\": \"EXCELENTES\"\r\n                        }\r\n\r\n                    ]\r\n                }\r\n            ]\r\n        }\r\n    }\r\n}\r\n"
+				},
+				"url": {
+					"raw": "https://graph.facebook.com/v17.0/101097786411302/messages",
+					"protocol": "https",
+					"host": [
+						"graph",
+						"facebook",
+						"com"
+					],
+					"path": [
+						"v17.0",
+						"101097786411302",
+						"messages"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
