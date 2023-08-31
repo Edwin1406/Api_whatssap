@@ -18,8 +18,8 @@ cargatabla(){
 }
     eliminar(idPaciente : number) {
         swal.fire({
-            title: 'Pacientes',
-            text: "Esta seguro que desea elminar el paciente",
+            title: 'Libros',
+            text: "Esta seguro que desea elminar el Libro",
             icon: 'warning',
             showCancelButton: true,
             confirmButtonColor: '#d33',
@@ -29,7 +29,7 @@ cargatabla(){
             if (result.isConfirmed) {
                 this.pacienteServicio.eliminar(idPaciente).subscribe((dato) => {
                     if (dato) {
-                        swal.fire('Pacientes', 'Se elimino correctamente', 'success');
+                        swal.fire('Libros', 'Se elimino correctamente', 'success');
                         this.cargatabla();
 
                     }
