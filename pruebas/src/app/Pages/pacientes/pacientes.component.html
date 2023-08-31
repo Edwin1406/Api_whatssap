@@ -1,0 +1,60 @@
+<div class="panel-header panel-header-sm">
+</div>
+<div class="main-content">
+  <div class="row">
+    <div class="col-md-12">
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title"> Lista de Libros</h4>
+          <button type="button" class="btn btn-danger" [routerLink]="['/nuevopaciente']">Nuevo Libros</button>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table">
+              <thead class=" text-primary">
+                <th>
+                  #
+                </th>
+                <th>
+                  titulo
+                </th>
+                <th>
+                  fecha_publicacion
+                </th>
+                <th>
+                  Editorial
+                </th>
+                <th>
+                  Genero
+                </th>
+                <th>
+                  Sinopsis                
+                  </th>
+                <th>Autor</th>
+                <th>Opciones</th>
+              </thead>
+             <tbody>
+                <tr *ngFor="let paciente of listapacientes; let i = index">
+                    <td>{{i + 1 }}</td>
+                    <td>{{paciente.titulo }}</td>
+                    <td>{{paciente.fecha_publicacion}}</td>
+                    <td>{{paciente.editorial}}</td>
+                    <td>{{paciente.genero}}</td>
+                    <td>{{paciente.sinopsis}}</td>
+                    <td>{{paciente.autor_id }}</td>
+                    <!-- <td>{{paciente.tipo}}</td> -->
+                    <td>
+                        <button type="button" class="btn btn-success" [routerLink]="['/editarpaciente/' + paciente.libro_id]" >Editar</button>
+                        <button type="button" class="btn btn-default" (click)="eliminar(paciente.libro_id)">Eliminar</button>
+
+                    </td>
+                </tr>
+             </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+</div>
